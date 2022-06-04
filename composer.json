@@ -1,0 +1,38 @@
+{
+    "name": "patrickvandewal/laravel-kc-pdf-service",
+    "description": "Wrapper for the KingsCode HTML to PDF service.",
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": "^8.0|^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Patrick van de Wal",
+            "email": "p.vandewal@live.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KingsCode\\LaravelHtmlToPdf\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KingsCode\\LaravelHtmlToPdf\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KingsCode\\LaravelHtmlToPdf\\KCHtmlToPdfServiceProvider"
+            ]
+        }
+    }
+}
