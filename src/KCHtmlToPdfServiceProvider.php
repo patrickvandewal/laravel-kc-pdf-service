@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace KingsCode\LaravelHtmlToPdf;
 
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
+use KingsCode\LaravelHtmlToPdf\Client\Client;
+use KingsCode\LaravelHtmlToPdf\Contracts\ClientContract;
 
 class KCHtmlToPdfServiceProvider extends ServiceProvider
 {
@@ -15,6 +19,21 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../Config/htmltopdf.php', 'htmltopdf');
+
+        $this->app->singleton(ClientContract::class, function (Container $container) {
+            /** @var \Illuminate\Contracts\Config\Repository $config */
+            $config = $container->make(Repository::class);
+
+            $httpClient = new \GuzzleHttp\Client([
+                'base_uri' => $config->get('htmltopdf.service_url'),
+                'headers'  => [
+                    'Authorization' => "Bearer {$config->get('htmltopdf.auth_token')}",
+                ],
+            ]);
+
+            return new Client($httpClient, $config);
+        });
     }
 
     /**
@@ -24,16 +43,10 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-    }
-
-    /**
-     * Get the package root path.
-     *
-     * @param $path
-     * @return string
-     */
-    protected function packageRootPath($path)
-    {
-        return __DIR__ . '/../' . $path;
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/htmltopdf.php' => config_path('htmltopdf.php'),
+            ], 'config');
+        }
     }
 }
