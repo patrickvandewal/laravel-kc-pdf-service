@@ -1,4 +1,6 @@
-/.idea/
-/vendor/
-/build/
+.idea
+vendor
+build
+.env
+.phpunit.result.cache
 composer.lock
