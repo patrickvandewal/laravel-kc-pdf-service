@@ -1,6 +1,6 @@
 <?php
 
-namespace KingsCode\LaravelHtmlToPdf\Client;
+namespace KingsCode\LaravelHtmlToPdf\Tests;
 
 use GuzzleHttp\Psr7\Response;
 use KingsCode\LaravelHtmlToPdf\Contracts\ClientContract;
