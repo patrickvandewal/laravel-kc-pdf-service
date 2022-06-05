@@ -19,7 +19,7 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../Config/htmltopdf.php', 'htmltopdf');
+        $this->mergeConfigFrom(__DIR__ . '/../config/htmltopdf.php', 'htmltopdf');
 
         $this->app->singleton(ClientContract::class, function (Container $container) {
             /** @var \Illuminate\Contracts\Config\Repository $config */
