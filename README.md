@@ -1,4 +1,4 @@
-# Laravel Filterable
+# Laravel KingsCode HTML to PDF Service wrapper
 [![Packagist](https://img.shields.io/packagist/v/patrickvandewal/laravel-kc-pdf-service.svg?colorB=brightgreen)](https://packagist.org/packages/patrickvandewal/laravel-kc-pdf-service)
 [![Packagist](https://img.shields.io/packagist/dt/patrickvandewal/laravel-kc-pdf-service.svg?colorB=brightgreen)](https://packagist.org/packages/patrickvandewal/laravel-kc-pdf-service)
 [![license](https://img.shields.io/github/license/patrickvandewal/laravel-kc-pdf-service.svg?colorB=brightgreen)](https://github.com/patrickvandewal/laravel-kc-pdf-service)
