@@ -19,7 +19,7 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/kchtmltopdf.php', 'kchtmltopdf');
+        $this->mergeConfigFrom(__DIR__ . '/../config/kchtmltopdf.php', 'kchtmltopdf');
 
         $this->app->singleton(ClientContract::class, function (Container $container) {
             /** @var \Illuminate\Contracts\Config\Repository $config */
@@ -45,7 +45,7 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/config/kchtmltopdf.php' => config_path('kchtmltopdf.php'),
+                __DIR__ . '/../config/kchtmltopdf.php' => config_path('kchtmltopdf.php'),
             ], 'config');
         }
     }
