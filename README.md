@@ -10,3 +10,8 @@ Require the package.
 ```sh
 composer require patrickvandewal/laravel-kc-pdf-service
 ```
+
+Optionally, publish the package's configuration file by running:
+```
+php artisan vendor:publish --provider="KingsCode\LaravelHtmlToPdf\KCHtmlToPdfServiceProvider"
+```

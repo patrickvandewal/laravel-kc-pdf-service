@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Laravel KingsCode HtmlToPdf Service Test Suite" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.002608">
+    <testsuite name="KingsCode\LaravelHtmlToPdf\Tests\ClientTest" file="C:\Users\Patrick\Desktop\laravel-kc-pdf-service\tests\KingsCode\LaravelHtmlToPdf\Tests\ClientTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.002608">
+      <testcase name="it_can_test_something" class="KingsCode\LaravelHtmlToPdf\Tests\ClientTest" classname="KingsCode.LaravelHtmlToPdf.Tests.ClientTest" file="C:\Users\Patrick\Desktop\laravel-kc-pdf-service\tests\KingsCode\LaravelHtmlToPdf\Tests\ClientTest.php" line="11" assertions="0" time="0.002608">
+        <error type="Error">KingsCode\LaravelHtmlToPdf\Tests\ClientTest::it_can_test_something
+Error: Class "KingsCode\LaravelHtmlToPdf\Client\DummyClient" not found
+
+C:\Users\Patrick\Desktop\laravel-kc-pdf-service\tests\KingsCode\LaravelHtmlToPdf\Tests\ClientTest.php:13
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>
