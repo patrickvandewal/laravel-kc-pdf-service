@@ -19,16 +19,16 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/htmltopdf.php', 'htmltopdf');
+        $this->mergeConfigFrom(__DIR__ . '/config/kchtmltopdf.php', 'kchtmltopdf');
 
         $this->app->singleton(ClientContract::class, function (Container $container) {
             /** @var \Illuminate\Contracts\Config\Repository $config */
             $config = $container->make(Repository::class);
 
             $httpClient = new \GuzzleHttp\Client([
-                'base_uri' => $config->get('htmltopdf.service_url'),
+                'base_uri' => $config->get('kc_html_to_pdf.service_url'),
                 'headers'  => [
-                    'Authorization' => "Bearer {$config->get('htmltopdf.auth_token')}",
+                    'Authorization' => "Bearer {$config->get('kc_html_to_pdf.auth_token')}",
                 ],
             ]);
 
@@ -45,7 +45,7 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/htmltopdf.php' => config_path('htmltopdf.php'),
+                __DIR__ . '/config/kchtmltopdf.php' => config_path('kchtmltopdf.php'),
             ], 'config');
         }
     }
