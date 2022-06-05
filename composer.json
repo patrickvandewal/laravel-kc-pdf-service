@@ -7,10 +7,10 @@
         "guzzlehttp/guzzle": "^7.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^8.0"
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
+        "test": "vendor/bin/phpunit"
     },
     "type": "library",
     "license": "MIT",
