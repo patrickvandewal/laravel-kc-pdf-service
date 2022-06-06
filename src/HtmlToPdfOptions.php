@@ -8,10 +8,13 @@ class HtmlToPdfOptions
 
     private string $callback;
 
-    public function __construct(string $callback, bool $landscape = false)
+    private string $callbackAuthToken;
+
+    public function __construct(string $callback, string $callbackAuthToken, bool $landscape = false)
     {
         $this->landscape = $landscape;
         $this->callback = $callback;
+        $this->callbackAuthToken = $callbackAuthToken;
     }
 
     public function isLandscape(): bool
@@ -22,5 +25,10 @@ class HtmlToPdfOptions
     public function getCallback(): string
     {
         return $this->callback;
+    }
+
+    public function getCallbackAuthToken(): string
+    {
+        return $this->callbackAuthToken;
     }
 }

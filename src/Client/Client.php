@@ -12,21 +12,20 @@ class Client implements ClientContract
 {
     private HttpClient $httpClient;
 
-    private Repository $repository;
-
-    public function __construct(HttpClient $httpClient, Repository $repository)
+    public function __construct(HttpClient $httpClient)
     {
         $this->httpClient = $httpClient;
-        $this->repository = $repository;
     }
 
     public function createDocument(string $html, HtmlToPdfOptions $options): ResponseInterface
     {
         return $this->httpClient->post('/request', [
-            'html'       => $html,
-            'auth_token' => $this->repository->get('htmltopdf.auth_token'),
-            'callback'   => $this->repository->get('htmltopdf.callback'),
-            'landscape'  => $options->isLandscape(),
+            'form_params' => [
+                'html'       => $html,
+                'auth_token' => $options->getCallbackAuthToken(),
+                'callback'   => $options->getCallback(),
+                'landscape'  => $options->isLandscape(),
+            ],
         ]);
     }
 }
