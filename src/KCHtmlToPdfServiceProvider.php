@@ -26,15 +26,14 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
             $config = $container->make(Repository::class);
 
             $httpClient = new \GuzzleHttp\Client([
-                'base_uri' => $config->get('kc_html_to_pdf.service_url'),
+                'base_uri' => $config->get('kchtmltopdf.kc_html_to_pdf.service_url'),
                 'headers'  => [
-                    'Authorization' => "Bearer {$config->get('kc_html_to_pdf.auth_token')}",
+                    'Authorization' => "Bearer {$config->get('kchtmltopdf.kc_html_to_pdf.auth_token')}",
                 ],
             ]);
 
-            return new Client($httpClient, $config);
-        });
-    }
+            return new Client($httpClient);
+        }
 
     /**
      * Perform post-registration booting of services.
