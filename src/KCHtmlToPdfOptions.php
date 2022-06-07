@@ -2,7 +2,7 @@
 
 namespace KingsCode\LaravelHtmlToPdf;
 
-class HtmlToPdfOptions
+class KCHtmlToPdfOptions
 {
     private bool $printBackground;
 

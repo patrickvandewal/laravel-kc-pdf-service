@@ -2,7 +2,7 @@
 
 namespace KingsCode\LaravelHtmlToPdf\Tests;
 
-use KingsCode\LaravelHtmlToPdf\HtmlToPdfOptions;
+use KingsCode\LaravelHtmlToPdf\KCHtmlToPdfOptions;
 use PHPUnit\Framework\TestCase;
 
 class HtmlToPdfOptionsTest extends TestCase
@@ -13,7 +13,7 @@ class HtmlToPdfOptionsTest extends TestCase
         $callback = 'callback';
         $callbackAuthToken = '123456789';
 
-        $options = new HtmlToPdfOptions($callback, $callbackAuthToken);
+        $options = new KCHtmlToPdfOptions($callback, $callbackAuthToken);
 
         $this->assertEquals($callback, $options->getCallback());
         $this->assertEquals($callbackAuthToken, $options->getCallbackAuthToken());
@@ -24,7 +24,7 @@ class HtmlToPdfOptionsTest extends TestCase
     {
         $callback = 'callback';
         $callbackAuthToken = '123456789';
-        $options = new HtmlToPdfOptions($callback, $callbackAuthToken, landscape: true);
+        $options = new KCHtmlToPdfOptions($callback, $callbackAuthToken, landscape: true);
 
         $this->assertEquals($callback, $options->getCallback());
         $this->assertEquals($callbackAuthToken, $options->getCallbackAuthToken());
@@ -36,7 +36,7 @@ class HtmlToPdfOptionsTest extends TestCase
     {
         $callback = 'callback';
         $callbackAuthToken = '123456789';
-        $options = new HtmlToPdfOptions($callback, $callbackAuthToken, printBackground: true);
+        $options = new KCHtmlToPdfOptions($callback, $callbackAuthToken, printBackground: true);
 
         $this->assertEquals($callback, $options->getCallback());
         $this->assertEquals($callbackAuthToken, $options->getCallbackAuthToken());
