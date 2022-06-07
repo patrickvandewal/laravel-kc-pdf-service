@@ -4,11 +4,11 @@ namespace KingsCode\LaravelHtmlToPdf\Client;
 
 use GuzzleHttp\Client as HttpClient;
 use \Illuminate\Contracts\Config\Repository;
-use KingsCode\LaravelHtmlToPdf\Contracts\ClientContract;
+use KingsCode\LaravelHtmlToPdf\Contracts\KCHtmlToPdfClientContract;
 use KingsCode\LaravelHtmlToPdf\HtmlToPdfOptions;
 use Psr\Http\Message\ResponseInterface;
 
-class Client implements ClientContract
+class KCHtmlToPdfClient implements KCHtmlToPdfClientContract
 {
     private HttpClient $httpClient;
 

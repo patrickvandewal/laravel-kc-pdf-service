@@ -7,8 +7,8 @@ namespace KingsCode\LaravelHtmlToPdf;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
-use KingsCode\LaravelHtmlToPdf\Client\Client;
-use KingsCode\LaravelHtmlToPdf\Contracts\ClientContract;
+use KingsCode\LaravelHtmlToPdf\Client\KCHtmlToPdfClient;
+use KingsCode\LaravelHtmlToPdf\Contracts\KCHtmlToPdfClientContract;
 
 class KCHtmlToPdfServiceProvider extends ServiceProvider
 {
@@ -21,7 +21,7 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/kchtmltopdf.php', 'kchtmltopdf');
 
-        $this->app->singleton(ClientContract::class, function (Container $container) {
+        $this->app->singleton(KCHtmlToPdfClientContract::class, function (Container $container) {
             /** @var \Illuminate\Contracts\Config\Repository $config */
             $config = $container->make(Repository::class);
 
@@ -32,7 +32,7 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
                 ],
             ]);
 
-            return new Client($httpClient);
+            return new KCHtmlToPdfClient($httpClient);
         });
     }
 
