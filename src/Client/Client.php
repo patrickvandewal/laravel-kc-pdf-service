@@ -21,11 +21,11 @@ class Client implements ClientContract
     {
         return $this->httpClient->post('/request', [
             'form_params' => [
-                'html'            => $html,
-                'auth_token'      => $options->getCallbackAuthToken(),
-                'callback'        => $options->getCallback(),
-                'printBackground' => $options->getPrintBackground(),
-                'landscape'       => $options->isLandscape(),
+                'html'             => $html,
+                'auth_token'       => $options->getCallbackAuthToken(),
+                'callback'         => $options->getCallback(),
+                'print_background' => $options->getPrintBackground(),
+                'landscape'        => $options->isLandscape(),
             ],
         ]);
     }
