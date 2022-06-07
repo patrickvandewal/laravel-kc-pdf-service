@@ -33,7 +33,8 @@ class KCHtmlToPdfServiceProvider extends ServiceProvider
             ]);
 
             return new Client($httpClient);
-        }
+        });
+    }
 
     /**
      * Perform post-registration booting of services.
